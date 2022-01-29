@@ -99,10 +99,6 @@ sm_securize_apdu(struct sc_context *ctx, struct sm_info *sm_info, struct sc_remo
 	int rv;
 	LOG_FUNC_CALLED(ctx);
 
-	apdu->ins = 0x22;
-	apdu->p1 = 0x81;
-	apdu->p2 = 0xB6;
-
 	sc_debug(ctx, SC_LOG_DEBUG_SM,
 	       "securize APDU (cla:%X,ins:%X,p1:%X,p2:%X,data(%"SC_FORMAT_LEN_SIZE_T"u):%p)",
 	       apdu->cla, apdu->ins, apdu->p1, apdu->p2, apdu->datalen,
